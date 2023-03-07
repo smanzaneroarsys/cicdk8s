@@ -20,9 +20,12 @@ jobs:
       run: |
         mkdir /tmp/archivos-a-copiar
         cp -R . /tmp/archivos-a-copiar
-    - name: Copiar archivos al contenedor de Kubernetes
-      uses: nickgronow/kubectl@master
+    - name: Kubectl utility
+      # You may pin to the exact commit or the version.
+      # uses: nickgronow/kubectl@70d7b1dd3e89731270b4760e213fec34fc2659ab
+      uses: nickgronow/kubectl@v1.17.4
       with:
-        config_data: ${{ secrets.kube_config }}
-        args: 'kubectl cp /tmp/archivos-a-copiar https-85c6cdcddd-4h5zc:/usr/local/apache2/htdocs/'
+      # The kube config data base64 encoded
+         config_data: ${{ secrets.KUBE_CONFIG }}
+         args: 'kubectl cp /tmp/archivos-a-copiar https-85c6cdcddd-4h5zc:/usr/local/apache2/htdocs/'
         
