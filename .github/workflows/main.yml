@@ -26,6 +26,6 @@ jobs:
       uses: nickgronow/kubectl@v1.17.4
       with:
       # The kube config data base64 encoded
-         config_data: '"${{ secrets.KUBE_CONFIG }}"'
-         args: '"kubectl cp /tmp/archivos-a-copiar https-85c6cdcddd-4h5zc:/usr/local/apache2/htdocs/"'
+         config_data: "${{ secrets.KUBE_CONFIG }}"
+         args: "kubectl cp /tmp/archivos-a-copiar https-85c6cdcddd-4h5zc:/usr/local/apache2/htdocs/"
         
