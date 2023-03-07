@@ -23,5 +23,5 @@ jobs:
     - name: Copiar archivos al contenedor de Kubernetes
       with:
         config_data: ${{ secrets.kube_config }}
-        args: 'kubectl cp /tmp/archivos-a-copiar https-85c6cdcddd-4h5zc:/usr/local/apache2/htdocs/
+        args: 'kubectl cp /tmp/archivos-a-copiar https-85c6cdcddd-4h5zc:/usr/local/apache2/htdocs/'
         
