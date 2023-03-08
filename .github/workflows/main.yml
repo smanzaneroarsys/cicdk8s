@@ -23,6 +23,6 @@ jobs:
     - name: Kubectl deploy
       run: |
         comando="${{ secrets.COMANDO}}"
-        bash "$comando"
+        bash $comando
       shell: bash
         
