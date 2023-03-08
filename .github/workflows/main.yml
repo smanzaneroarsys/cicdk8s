@@ -21,6 +21,7 @@ jobs:
         mkdir /tmp/archivos-a-copiar
         cp -R . /tmp/archivos-a-copiar
     - name: Kubectl deploy
-      run: ${{ secrets.COMANDO }}
+       comando="${{ secrets.COMANDO//[\*\']}"
+       bash "$comando"
       shell: bash
         
