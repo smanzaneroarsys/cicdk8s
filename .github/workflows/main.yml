@@ -20,13 +20,14 @@ jobs:
       run: |
         mkdir /tmp/archivos-a-copiar
         cp -R . /tmp/archivos-a-copiar
-    - name: Kubectl cp
-      run: |
-        comando="${{ secrets.COMANDO}}"
-        bash $comando
-      shell: bash
     - name: Debug secreto
       env:
          MY_SECRET: ${{ secrets.COMANDO }}
       run: |
          echo $MY_SECRET
+    - name: Kubectl cp
+      run: |
+        comando="${{ secrets.COMANDO}}"
+        bash $comando
+      shell: bash
+
