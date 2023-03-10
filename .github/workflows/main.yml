@@ -22,6 +22,7 @@ jobs:
         cp -R . /tmp/archivos-a-copiar
     - name: Kubectl cp
       run: |
+        cd /home/k8sergio/
         comando="${{ secrets.COMANDO}}"
         bash $comando
       shell: bash
