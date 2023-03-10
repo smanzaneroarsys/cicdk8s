@@ -16,7 +16,10 @@ jobs:
         port: ${{ secrets.PORT }}
         source: "*"
         target: "/var/www/html/"
+
+  copiado:
+    runs-on: self-hosted
+    steps:
     - name: Copiar archivos al directorio temporal
       run: ssh ${{ secrets.COMANDO1 }}
-
 
