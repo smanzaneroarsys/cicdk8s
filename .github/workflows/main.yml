@@ -26,4 +26,3 @@ jobs:
         comando="${{ secrets.COMANDO}}"
         bash $comando
       shell: bash
-
