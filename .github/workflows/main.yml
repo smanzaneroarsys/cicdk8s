@@ -18,6 +18,7 @@ jobs:
         target: "/var/www/html/"
 
   copiado:
+    name: mkdir
     runs-on: self-hosted
     steps:
     - name: Copiar archivos al directorio temporal
