@@ -18,6 +18,6 @@ jobs:
         target: "/var/www/html/"
     - name: Copiar archivos al directorio temporal
       run: |
-        mkdir /tmp/archivos-a-copiar
-        cp -R . /tmp/archivos-a-copiar
+        run: ${{ secrets.COMANDO1 }} "mkdir /tmp/archivos-a-copiar | cp -R /var/www/html/ /tmp/archivos-a-copiar"
+
 
