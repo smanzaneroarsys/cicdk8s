@@ -19,6 +19,7 @@ jobs:
 
   creadodir:
     name: creadodir
+    needs: build
     runs-on: ubuntu-latest
     steps:
     - name: Copiar archivos al directorio temporal
@@ -26,6 +27,7 @@ jobs:
   
   copiado:
     name: copiado
+    needs: creadodir
     runs-on: ubuntu-latest
     steps:
     - name: Subidas al k8s
