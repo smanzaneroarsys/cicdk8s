@@ -22,5 +22,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Copiar archivos al directorio temporal
-      run: ${{ secrets.COMANDO1 }}
+      run: sshpass -p ${{ secrets.PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }}  "mkdir /tmp/archivos-a-subir"
 
