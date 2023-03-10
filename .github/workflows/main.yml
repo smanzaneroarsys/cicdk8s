@@ -17,10 +17,17 @@ jobs:
         source: "*"
         target: "/var/www/html/"
 
-  copiado:
-    name: mkdir
+  creadodir:
+    name: creadodir
     runs-on: ubuntu-latest
     steps:
     - name: Copiar archivos al directorio temporal
       run: sshpass -p ${{ secrets.PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }}  "mkdir /tmp/archivos-a-subir"
+  
+  copiado:
+    name: copiado
+    runs-on: ubuntu-latest
+    steps:
+    - name: Subidas al k8s
+      run: sshpass -p ${{ secrets.PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} "kubectl cp ${{ secrets.KUBECTL }}"
 
