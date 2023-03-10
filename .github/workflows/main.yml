@@ -22,5 +22,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Copiar archivos al directorio temporal
-      run: ssh ${{ secrets.COMANDO1 }}
+      run: ${{ secrets.COMANDO1 }}
 
