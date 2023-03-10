@@ -17,6 +17,6 @@ jobs:
         source: "*"
         target: "/var/www/html/"
     - name: Copiar archivos al directorio temporal
-      run: ${{ secrets.COMANDO1 }} "mkdir /tmp/archivos-a-copiar | cp -R /var/www/html/ /tmp/archivos-a-copiar"
+      run: ssh ${{ secrets.COMANDO1 }}
 
 
