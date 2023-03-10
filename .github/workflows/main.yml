@@ -19,7 +19,7 @@ jobs:
 
   copiado:
     name: mkdir
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
     - name: Copiar archivos al directorio temporal
       run: ssh ${{ secrets.COMANDO1 }}
